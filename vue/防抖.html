@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<input type="text">
+<script>
+  let input = document.querySelector("input");
+  let time = null;//time用来控制事件的触发
+  input.addEventListener('input',function(){
+    //防抖语句
+    if(time !== null){
+      // clearTimeout() 方法可取消由 setTimeout() 方法设置的定时操作。
+      // clearTimeout() 方法的参数必须是由 setTimeout() 返回的 ID 值。
+      clearTimeout(time);
+
+    }
+    time = setTimeout(() => {
+      console.log(this.value);//业务实现语句
+      //这里的this指向的是input
+    },500)
+  })
+</script>
+</body>
+</html>
