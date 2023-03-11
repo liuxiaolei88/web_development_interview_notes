@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+  function debounce(fn,delay){
+    let f = false
+    return function () {
+      if(f) return;
+      f = true
+      setTimeout(()=>{
+        fn()
+      },delay)
+    }
+  }
+</script>
+</body>
+</html>
